@@ -28,11 +28,17 @@ cache = Cache(app)
 def home():
     return render_template("home.html")
 
-def group_management():
-    return render_template("group_management.html")
+def manage_group():
+    return render_template("manage_group.html")
 
 def participant_view():
     return render_template("participant_view.html")
+
+def login():
+    return "login check"
+
+def create_group():
+    return "create group page"
 
 @admin_required
 def admin_only():

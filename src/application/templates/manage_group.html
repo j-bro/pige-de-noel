@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Group Management</h3>
+
+<div class="members-table">
+    <h4>Members</h4>
+    <table class="participants-table">
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Last login</td>
+        </tr>
+    </table>
+    <a href="#">New Member</a>
+</div>
+
+<div class="exchanges-list">
+    <h4>Exchanges</h4>
+    <table class="exchanges-table">
+        <tr>
+            <td>Date created</td>
+            <td>Price cap</td>
+            <td>Active</td>
+        </tr>
+    </table>
+    <a href="#">New Exchange</a>
+</div>
+
+
+<a href="#">Delete Group</a>
+
+{% endblock %}

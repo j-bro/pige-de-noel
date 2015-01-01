@@ -18,9 +18,13 @@ app.add_url_rule('/_ah/warmup', 'warmup', view_func=views.warmup)
 # Home page
 app.add_url_rule('/', 'home', view_func=views.home)
 
-app.add_url_rule('/manage_group', 'group_management', view_func=views.group_management)
+app.add_url_rule('/manage_group', 'manage_group', view_func=views.manage_group)
 
 app.add_url_rule('/participant_view', 'participant_view', view_func=views.participant_view)
+
+app.add_url_rule('/create_group', 'create_group', view_func=views.create_group, methods=['POST'])
+
+app.add_url_rule('/login', 'login', view_func=views.login, methods=['POST'])
 
 # Contrived admin-only view example
 # app.add_url_rule('/admin_only', 'admin_only', view_func=views.admin_only)

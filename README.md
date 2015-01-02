@@ -9,20 +9,20 @@ Participants can provide a gift list that will be viewable by their secret santa
 Currently a work in progress, not at all functional for the moment.
 
 ## Groups
-**Status:**
+**Status: incomplete**
 Groups contain a minimum of 3 participants.
 Participants can be added by the administrator when the group is created or later on from the group management page.
 Participants will receive a link to join the group. The link is not specific to their email address and could potentially be used by someone else if it were to be forwarded (however each link can only be used once).
 
 ## Exchanges
-**Status:**
+**Status: incomplete**
 An exchange can be created within a group of participants.
 Multiple exchanges per group are supported.
 Each exchange has its name and optional price limit.
 
 
 ## Authentication
-**Status:**
+**Status: incomplete**
 Authentication is handled through Google Accounts using the Google App Engine users API.
 
 When the administrator creates the group, participants will receive an invitation to join the group by email.

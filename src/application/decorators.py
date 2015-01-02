@@ -7,7 +7,7 @@ Decorators for URL handlers
 
 from functools import wraps
 from google.appengine.api import users
-from flask import redirect, request, abort
+from flask import redirect, request, abort, url_for
 
 
 def login_required(func):
@@ -15,7 +15,8 @@ def login_required(func):
     @wraps(func)
     def decorated_view(*args, **kwargs):
         if not users.get_current_user():
-            return redirect(users.create_login_url(request.url))
+            return redirect(users.create_login_url(request.url)) # screwed up...
+            #return redirect(users.create_login_url(url_for('post_login') + "?r=" + request.url))
         return func(*args, **kwargs)
     return decorated_view
 

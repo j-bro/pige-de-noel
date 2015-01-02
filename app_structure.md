@@ -3,8 +3,11 @@
 ## Views
 
 ### Welcome page
-- Login prompt (username & password), forgot password
-- Create a new group area (group name & management email)
+- Button for regular login
+- Button for creating a group
+
+### Create a group
+- Form for group name and participants
 
 ### Group management
 - View all members in the group

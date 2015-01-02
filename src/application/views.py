@@ -17,8 +17,6 @@ from flask_cache import Cache
 
 from application import app
 from decorators import login_required, admin_required
-from forms import ExampleForm
-from models import ExampleModel
 
 
 # Flask-Cache (configured to use App Engine Memcache API)
@@ -26,19 +24,31 @@ cache = Cache(app)
 
 
 def home():
-    return render_template("home.html")
+    if users.get_current_user():
+        return redirect('participant_view')
+    return render_template("home.html", user=users.get_current_user())
 
+@login_required
+def post_login():
+    # Sets the "global" user variable NOT WORKING
+    #g.user = users.get_current_user()
+    return redirect(request.args.get('r'))
+
+@login_required
 def manage_group():
-    return render_template("manage_group.html")
+    return render_template("manage_group.html", user=users.get_current_user())
 
+@login_required
 def participant_view():
-    return render_template("participant_view.html")
+    return render_template("participant_view.html", user=users.get_current_user())
 
-def login():
-    return "login check"
-
+@login_required
 def create_group():
-    return "create group page"
+    return render_template("create_group.html", user=users.get_current_user())
+
+def logout():
+    if users.get_current_user():
+        return redirect(users.create_logout_url(url_for('home')))
 
 @admin_required
 def admin_only():

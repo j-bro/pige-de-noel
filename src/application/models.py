@@ -8,7 +8,7 @@ App Engine datastore models
 
 from google.appengine.ext import ndb
 
-class FromTo(ndb.Model):
+class Draw(ndb.Model):
     """
     Representation of a participant who will gift to another
     Structured Property of an Exchange Property
@@ -32,20 +32,21 @@ class Exchange(ndb.Model):
     modified = ndb.DateTimeProperty(auto_now=True)
     active = ndb.BooleanProperty(required=True, default=False)
     price_cap = ndb.IntegerProperty(required=True)
-    draw = ndb.StructuredProperty(FromTo, repreated=True)
-    lists = ndb.StructuredProperty(List, repeated=True)
+    draw = ndb.StructuredProperty(Draw, repeated=True)
+    lists = ndb.StructuredProperty(GiftList, repeated=True)
 
 class Group(ndb.Model):
     """Group of users"""
     name = ndb.StringProperty(required=True)
     administrator = ndb.StringProperty(required=True) # id of group administrator
     participants = ndb.StringProperty(repeated=True) # id of participants
-    exchanges = ndb.StructuredProperty(Exchange, repeated=True)
+    exchanges = ndb.KeyProperty(kind=Exchange, repeated=True)
     
 class User(ndb.Model):
     """App user"""
     user_id = ndb.StringProperty(required=True) # user_id from Google login User object
     name = ndb.StringProperty(required=True)
+    email = ndb.StringProperty(required=True)
     first_login = ndb.DateTimeProperty(auto_now_add=True)
     last_login = ndb.DateTimeProperty(auto_now=True)
     

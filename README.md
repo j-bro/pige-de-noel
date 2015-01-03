@@ -32,3 +32,6 @@ When the administrator creates the group, participants will receive an invitatio
 By clicking on that link, they will be taken to the login page, where they must login with a Google account*. After logging in, the invitation to join the group will be accepted and they will be taken to their participation page. 
 
 *While participants must login using a Google Account, they are free to change their email address for communication later through the user settings page at the the top-right of the nav bar.
+
+
+Built on Google App Engine using the [Flask microframework](http://flask.pocoo.org)

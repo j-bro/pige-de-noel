@@ -24,7 +24,9 @@ app.add_url_rule('/create_group', 'create_group', view_func=views.create_group, 
 
 app.add_url_rule('/manage_group', 'manage_group', view_func=views.manage_group)
 
-app.add_url_rule('/participant_view', 'participant_view', view_func=views.participant_view)
+app.add_url_rule('/exchange', 'exchange', view_func=views.exchange)
+
+app.add_url_rule('/account_settings', 'account_settings', view_func=views.account_settings, methods=['GET', 'POST'])
 
 app.add_url_rule('/logout', 'logout', view_func=views.logout)
 

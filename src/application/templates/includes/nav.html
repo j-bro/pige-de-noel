@@ -13,19 +13,33 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li class="inactive"><a href="{{ url_for('participant_view') }}">Participant View</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Exchanges<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Exchange #1</a></li>
+            <li><a href="#">Exchange #2</a></li>
+            <li><a href="#">Exchange #3</a></li>
+          </ul>
+        </li>
       <li><a href="{{ url_for('manage_group') }}">Manage Group</a></li>
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
+        {% if user %}
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            {{ user.nickname() }}
+            <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Login</a></li>
+            <li><a href="#">Blah</a></li>
+          <li><a href="{{ url_for('account_settings') }}">Account Settings</a></li>
           <li class="divider"></li>
-          <li><a href="#">Separated link</a></li>
+          <li><a href="{{ url_for('logout') }}">Logout</a></li>
         </ul>
       </li>
+        {% else %}
+        <li><a href="{{ url_for('exchange') }}">Login</a></li>
+        {% endif %}
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

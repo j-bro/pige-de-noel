@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>User settings</h3>
+
+<h4>Your info</h4>
+
+<form name="account-settings" action="{{ url_for('account_settings') }}">
+    <dd>Name</dd>
+    <dt><input type="text" name="name" autocomplete="off"></dt>
+    <dd>Email address</dd>
+    <dt><input type="text" name="email"></dt>
+</form>
+
+<br>
+
+<h4>Group administration</h4>
+You are an administrator of the following groups
+<ul>
+    <li><a href="#">Group 1</a></li>
+    <li><a href="#">Group 2</a></li>
+    <li><a href="#">Group 3</a></li>
+</ul>
+
+{% endblock %}

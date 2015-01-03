@@ -29,3 +29,5 @@
 - View current group name & members
 - View chosen person's gift list
 - View and modify participant's (own) gift list
+
+Set up invitation to join group 

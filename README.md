@@ -47,3 +47,5 @@ By clicking on that link, they will be taken to the login page, where they must 
 ## Acknowledgements
 
 Built on [Google App Engine]() using the [Flask microframework](http://flask.pocoo.org).
+
+The project template is [kamalgil](https://github.com/kamamlgil)'s [Flask on App Engine Project Template](https://github.com/kamalgill/flask-appengine-template).
